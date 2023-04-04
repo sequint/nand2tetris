@@ -15,4 +15,8 @@ CHIP DMux {
 
     PARTS:
     // Put your code here:
+    Or(a=in, b=sel, out=orWire);
+    Not(in=orWire, out=notOrWire);
+    And(a=in, b=orWire, out=a);
+    And(a=sel, b=notOrWire, out=b);
 }
