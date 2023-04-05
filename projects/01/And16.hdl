@@ -30,5 +30,20 @@ CHIP And16 {
     Nand(a=a[13], b=b[13], out=nandAB13);
     Nand(a=a[14], b=b[14], out=nandAB14);
     Nand(a=a[15], b=b[15], out=nandAB15);
-    Not16(in=nandAB[0..15], out=out);
+    Not(in=nandAB0, out=out[0]);
+    Not(in=nandAB1, out=out[1]);
+    Not(in=nandAB2, out=out[2]);
+    Not(in=nandAB3, out=out[3]);
+    Not(in=nandAB4, out=out[4]);
+    Not(in=nandAB5, out=out[5]);
+    Not(in=nandAB6, out=out[6]);
+    Not(in=nandAB7, out=out[7]);
+    Not(in=nandAB8, out=out[8]);
+    Not(in=nandAB9, out=out[9]);
+    Not(in=nandAB10, out=out[10]);
+    Not(in=nandAB11, out=out[11]);
+    Not(in=nandAB12, out=out[12]);
+    Not(in=nandAB13, out=out[13]);
+    Not(in=nandAB14, out=out[14]);
+    Not(in=nandAB15, out=out[15]);
 }
