@@ -15,8 +15,8 @@ CHIP DMux {
 
     PARTS:
     // Put your code here:
-    Or(a=in, b=sel, out=orWire);
-    Not(in=orWire, out=notOrWire);
-    And(a=in, b=orWire, out=a);
-    And(a=sel, b=notOrWire, out=b);
+    Xor(a=in, b=sel, out=xorInSel);
+    Not(in=xorInSel, out=notXorInSel);
+    And(a=in, b=xorInSel, out=a);
+    And(a=sel, b=notXorInSel, out=b);
 }
