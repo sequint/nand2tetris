@@ -16,8 +16,11 @@ CHIP RAM8 {
 
     PARTS:
     // Put your code here:
+
+    // Set the load value to true of the matching address
     DMux8Way(in=load, sel=address, a=reg1Load, b=reg2Load, c=reg3Load, d=reg4Load, e=reg5Load, f=reg6Load, g=reg7Load, h=reg8Load);
 
+    // Using the new load values replace the matching address' value with in
     Register(in=in, load=reg1Load, out=reg1Out);
     Register(in=in, load=reg2Load, out=reg2Out);
     Register(in=in, load=reg3Load, out=reg3Out);
@@ -27,5 +30,6 @@ CHIP RAM8 {
     Register(in=in, load=reg7Load, out=reg7Out);
     Register(in=in, load=reg8Load, out=reg8Out);
 
+    // Output the matching address' new value
     Mux8Way16(a=reg1Out, b=reg2Out, c=reg3Out, d=reg4Out, e=reg5Out, f=reg6Out, g=reg7Out, h=reg8Out, sel=address, out=out);
 }
